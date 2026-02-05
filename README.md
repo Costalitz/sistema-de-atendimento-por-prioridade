@@ -35,8 +35,8 @@ As solicitações são atendidas seguindo as regras:
 
 sistema_atendimento/
 │
-├── sistema.py # Lógica do sistema (criação, inserção e atendimento)
-├── teste.py # Simulação e testes manuais do sistema
+├── sistema.py
+├── teste.py 
 └── README.md
 
 ---
