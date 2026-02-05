@@ -1,4 +1,3 @@
-# Projeto pré carnaval.
 # Foco deste projeto é a criação de um Sistema de Atendimento por Prioridade.
 
 fila = []
@@ -48,18 +47,3 @@ def atender_solicitacao(fila):
         return None
     
     return fila.pop(0)
-
-# o contador foi criado fora das funções garantindo que cada função tenha uma única responsabilidade,
-# evitando a ocorrência de dependências e ordens duplicadas.
-soli1 = criar_solicitacao('Carlos', 'software', contador_ordem)
-contador_ordem += 1
-inserir_solicitacao(fila, soli1)
-
-soli2 = criar_solicitacao('Ana', 'hardware', contador_ordem)
-contador_ordem += 1
-inserir_solicitacao(fila, soli2)
-
-soli3 = criar_solicitacao('Beatriz', 'consultoria', contador_ordem)
-contador_ordem += 1
-inserir_solicitacao(fila, soli3)
-
