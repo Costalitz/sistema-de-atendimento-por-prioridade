@@ -30,4 +30,7 @@ def main():
     print('\nAtendimentos:')
     while fila:
         atendida = atender_solicitacao(fila)
-        print(f"Atendendo: {atendida} - {atendida['problema']}")
+        print(f"Atendendo: {atendida['cliente']} - {atendida['problema']}")
+
+if __name__ == "__main__":
+    main()
