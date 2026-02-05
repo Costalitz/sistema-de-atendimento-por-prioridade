@@ -8,7 +8,7 @@ def criar_solicitacao(cliente, problema, ordem_de_chegada):
     nivel_de_prioridade = {
         "software": 3,
         "hardware": 2,
-        "duvida": 1
+        "consultoria": 1
     }
 
     solicitacao = {
@@ -20,7 +20,7 @@ def criar_solicitacao(cliente, problema, ordem_de_chegada):
 
     return solicitacao
 
-
+# função com condicional composta, que insere pelo nível de prioridade e desempata solicitações de mesmo nível pela ordem de chegada
 def inserir_solicitacao(fila, solicitacao):
     if not fila:
         fila.append(solicitacao)
@@ -40,13 +40,17 @@ def inserir_solicitacao(fila, solicitacao):
             return
         
     fila.append(solicitacao)
+
+# função que remove o primeiro elemento da fila
 def atender_solicitacao(fila):
     if not fila:
-        print("Não há solicitações a fila.")
+        print("Não há solicitações na fila.")
         return None
     
     return fila.pop(0)
 
+# o contador foi criado fora das funções garantindo que cada função tenha uma única responsabilidade,
+# evitando a ocorrência de dependências e ordens duplicadas.
 soli1 = criar_solicitacao('Carlos', 'software', contador_ordem)
 contador_ordem += 1
 inserir_solicitacao(fila, soli1)
@@ -55,7 +59,7 @@ soli2 = criar_solicitacao('Ana', 'hardware', contador_ordem)
 contador_ordem += 1
 inserir_solicitacao(fila, soli2)
 
-soli3 = criar_solicitacao('Beatriz', 'duvida', contador_ordem)
+soli3 = criar_solicitacao('Beatriz', 'consultoria', contador_ordem)
 contador_ordem += 1
 inserir_solicitacao(fila, soli3)
 
