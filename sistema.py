@@ -3,7 +3,6 @@
 
 fila = []
 contador_ordem = 0
-solicitacao = {}
 
 def criar_solicitacao(cliente, problema, ordem_de_chegada):
     nivel_de_prioridade = {
@@ -22,15 +21,41 @@ def criar_solicitacao(cliente, problema, ordem_de_chegada):
     return solicitacao
 
 
-def adicionar_solicitacao(fila, cliente, problema, nivel_de_prioridade, ordem_de_chegada):
-    solicitacao = {
-        "cliente": cliente,
-        "problema": problema,
-        "nivel_de_prioridade": nivel_de_prioridade,
-        "ordem_de_chegada": ordem_de_chegada
-        }
-    
-    fila.append(solicitacao)
-    contador_ordem += 1
+def inserir_solicitacao(fila, solicitacao):
+    if not fila:
+        fila.append(solicitacao)
+        return
 
+    for i in range(len(fila)):
+        fila_atual = fila[i]
+        
+        if solicitacao["nivel_de_prioridade"] > fila_atual["nivel_de_prioridade"]:
+            fila.insert(i, solicitacao)
+            return
+        
+        elif (solicitacao["nivel_de_prioridade"] == fila_atual["nivel_de_prioridade"] and
+              solicitacao["ordem_de_chegada"] < fila_atual["ordem_de_chegada"]):
+            
+            fila.insert(i, solicitacao)
+            return
+        
+    fila.append(solicitacao)
+def atender_solicitacao(fila):
+    if not fila:
+        print("Não há solicitações a fila.")
+        return None
+    
+    return fila.pop(0)
+
+soli1 = criar_solicitacao('Carlos', 'software', contador_ordem)
+contador_ordem += 1
+inserir_solicitacao(fila, soli1)
+
+soli2 = criar_solicitacao('Ana', 'hardware', contador_ordem)
+contador_ordem += 1
+inserir_solicitacao(fila, soli2)
+
+soli3 = criar_solicitacao('Beatriz', 'duvida', contador_ordem)
+contador_ordem += 1
+inserir_solicitacao(fila, soli3)
 
