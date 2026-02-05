@@ -33,7 +33,7 @@ def inserir_solicitacao(fila, solicitacao):
             fila.insert(i, solicitacao)
             return
         
-        elif (solicitacao["nivel_de_prioridade"] == fila_atual["nivel_de_prioridade"] and
+        if (solicitacao["nivel_de_prioridade"] == fila_atual["nivel_de_prioridade"] and
               solicitacao["ordem_de_chegada"] < fila_atual["ordem_de_chegada"]):
             
             fila.insert(i, solicitacao)
