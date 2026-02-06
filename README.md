@@ -66,3 +66,26 @@ O controle da ordem de chegada é feito por meio de um contador externo, garanti
 ```bash
 python teste.py
 ```
+## A execução irá:
+
+° inserir solicitações na fila
+
+° exibir a fila inicial
+
+° simular o atendimento das solicitações em ordem correta
+
+## 🚀 Evoluções Futuras
+
+° Criar um menu interativo com input()
+
+° Implementar testes automatizados
+
+° Refatorar o sistema utilizando classes
+
+° Integrar com interface gráfica ou web
+
+## 📌 Observações Finais
+
+Este projeto foi desenvolvido com foco em clareza, organização e aprendizado, simulando um problema real de forma controlada e escalável.
+
+Ele faz parte do meu processo de construção de base em programação e estruturas de dados.
